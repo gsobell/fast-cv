@@ -1,0 +1,97 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{multicol}
+\usepackage[a4paper]{geometry}
+\usepackage[dvipsnames]{xcolor} % List of availble colors here: https://tex.stackexchange.com/questions/592806/using-xcolor-list-in-smartdiagram-package
+
+% Hyperlink style and colors
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true,  % Colors links instead of ugly boxes
+  urlcolor     = black, % Color for external hyperlinks
+  linkcolor    = black, % Color of internal links
+  citecolor    = red    % Color of citations
+}
+
+% Sans font for section and subsection headings:
+\usepackage{fontspec}
+\setsansfont{Mona-Sans}
+
+% Use San Serif, color for section, subsection.
+% Replace MidnightBlue with a valid xcolor name to change the heading colors
+\usepackage{titlesec}
+\titleformat{\section}[block]{\sffamily\Large\color{MidnightBlue}}{}{0em}{}
+\titleformat{\subsection}[hang]{\sffamily\large\color{MidnightBlue}}{}{0em}{}
+
+% Name and personal Details
+\def \name{First Last}
+\def \phone{000.000.0000}
+\def \email{first last at mail dot com}
+\def \site{github.com/username}
+
+\begin{document}
+
+% Header and contact info:
+% Can also flushright, or center, your choice.
+\begin{flushright}
+\begin{tabular}{r |}
+\begin{Large} \sffamily\color{MidnightBlue} \name  \end{Large}
+\bigskip \\
+\phone \\
+\href{mailto: \email}{\email} \\
+\href{https://\site}{\site}
+\end{tabular}
+\end{flushright}
+
+% You can place a short blurb here of your bio
+
+\section{Education}
+\textbf{University of Somewhere}\\
+Dual BSc in Mathematics and Computer Science\\
+2016 $\to$ 2020 \\
+\\
+\textbf{High School of Something Something}\\
+GPA of x \\
+2002 $\to$ 2016\\
+\\
+\textbf{SAT, ACT, ETC..} \\
+Scores go here:\\
+2016
+
+\section{Work}
+\textbf{Other Generic Software Company} \\
+Software engineer on software team doing software \\
+2018 $\to$ \the\year{} \\ %compiles to current year
+\\
+\textbf{Generic Software Solutions, LTD} \\
+Internship in Sys Admin Department\\
+2016\\
+
+
+\begin{multicols}{2}
+\section{Skills}
+
+\subsection{Systems}
+Linux, SerenityOS, etc
+
+\subsection{Tools}
+Experienced with \texttt{vim} and \LaTeX.
+
+\subsection{Languages}
+C, C++, python, lisp and assembly.\\
+
+\section{Open Source}
+
+\subsection{Personal Projects}
+Personal Project 1, synopsis \\
+Personal Project 2, synopsis
+
+\subsection{Contributions}
+Projects you're involved with: \\
+Generic Open Source Project 1 \\
+Generic Open Source Project 2 \\
+
+\end{multicols}
+
+\color{white}This CV is actually \emph{stenographic}! That means there's a hidden message!
+
+\end{document}
